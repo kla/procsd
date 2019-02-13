@@ -19,7 +19,7 @@ ExecReload=/bin/bash -lc '<%= reload %>'
 <% end -%>
 
 Restart=always
-RestartSec=1
+RestartSec=<%= config["restart_sec"] %>
 TimeoutStopSec=30
 KillMode=mixed
 StandardInput=null

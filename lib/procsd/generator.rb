@@ -19,7 +19,8 @@ module Procsd
         content = generate_template("service", @options.merge(
           "target_name" => target_name,
           "commands" => commands,
-          "environment" => @config[:environment]
+          "environment" => @config[:environment],
+          "restart_sec" => @config[:restart_sec]
         ))
 
         services[name] = { content: content, size: size }

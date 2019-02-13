@@ -396,6 +396,7 @@ module Procsd
         @config[:processes][process_name]["size"] = formation[process_name] || 1
       end
 
+      @config[:restart_sec] = procsd["restart_sec"] || 5
       @config[:environment] = procsd["environment"] || {}
       @config[:systemd_dir] = procsd["systemd_dir"] || DEFAULT_SYSTEMD_DIR
       @config[:nginx] = procsd["nginx"]
